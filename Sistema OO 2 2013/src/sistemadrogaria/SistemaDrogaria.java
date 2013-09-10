@@ -21,8 +21,7 @@ public class SistemaDrogaria {
 		funcionarioDrogaria.cadastrarFuncionarios("84848484","123456789",50,4444,5555,2,3,"Victor", "Fellipe", "Shces qd 1000 bloco x", "(61) - 82252227");
 		
 		
-		String rgFuncDrogaria;
-		String cpfFuncDrogaria;
+		String rgFuncDrogaria; String cpfFuncDrogaria;
 		int digitoCpfFuncDrogaria;
 		int senhaFuncDrogaria;
 		int codigoFuncDrogaria;
