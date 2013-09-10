@@ -44,8 +44,8 @@ public class Funcionarios {
 		this.endereco = enderecoFunc;
 		this.telefone = telefoneFunc;
 
-		
-		boolean validacaoDigitoCpf = this.validarFunc2(digitoCpfFunc);
+		//Validacao do Digito de cpf, que é feito a partir dos 2 dígitos finais (não foi implementado)
+		boolean validacaoDigitoCpf = this.validarFunc(digitoCpfFunc);
 				if(validacaoDigitoCpf == true)
 				{
 					System.out.println("Funcionário cadastrado com sucesso!");
@@ -56,19 +56,19 @@ public class Funcionarios {
 				}
 	}
 		
-		private boolean validarFunc2(int digitoCpfFunc)
+		private boolean validarFunc(int digitoCpfFunc)
 		{
-			boolean validar2;
+			boolean validar1;
 			if(digitoCpfFunc > 99)
 			{
-				validar2 = false;
+				validar1 = false;
 			}
 			else
 			{
-				validar2 = true;
+				validar1 = true;
 			}
 			
-				return validar2;
+				return validar1;
 		}
 		
 
