@@ -2,6 +2,7 @@ package sistemadrogaria.entidades;
 
 public class Funcionarios {
 
+	//Declaracao de atributos
 	private String rg;
 	private String cpf;
 	private int digitoCpf;
@@ -17,7 +18,7 @@ public class Funcionarios {
 	
 	public Funcionarios(int digitoCpfFunc, int senhaFunc, int senhaFarmPopFunc, int codFunc,int fatorComFunc, String nomeFunc, String sobrenomeFunc)
 	{
-		
+		//
 		this.digitoCpf = digitoCpfFunc;
 		this.senha = senhaFunc;
 		this.senhaFarmaciaPopular = senhaFarmPopFunc;
@@ -44,17 +45,6 @@ public class Funcionarios {
 		this.telefone = telefoneFunc;
 
 		
-		/*Se fosse em booleano (teste)
-		 * boolean validacaoCpf = this.validarFunc1(cpfFunc);
-				if(validacaoCpf == true)
-				{
-					System.out.println("Funcionário cadastrado com sucesso!");
-				}
-				else
-				{
-					System.out.println("Funcionário não cadastrado!");
-				}
-				*/
 		boolean validacaoDigitoCpf = this.validarFunc2(digitoCpfFunc);
 				if(validacaoDigitoCpf == true)
 				{
@@ -64,75 +54,23 @@ public class Funcionarios {
 				{
 					System.out.println("Funcionário não cadastrado!");
 				}
-				
-		/*
-		 * Se telefone fosse double
-		 * boolean validacaoTelefone = this.validarFunc3(telefoneFunc);
-				if(validacaoTelefone == true)
-				{
-					System.out.println("Telefone existente!");
-				}
-				else
-				{
-					System.out.println("Telefone não existente!");
-				}
-		*/
+	}
+		
+		private boolean validarFunc2(int digitoCpfFunc)
+		{
+			boolean validar2;
+			if(digitoCpfFunc > 99)
+			{
+				validar2 = false;
+			}
+			else
+			{
+				validar2 = true;
+			}
 			
+				return validar2;
 		}
 		
-	//Validacao
-	
-	// cpf Caso fosse double
-	/* private boolean validarFunc1(double cpfFunc)
-	{
-		boolean validar;
-		if(cpfFunc > 999999999)
-		{
-			validar = true;
-		}
-		else
-		{
-			validar = false;
-		}
-		
-			return validar;
-	}
-	*/
-	// digito cpf
-	private boolean validarFunc2(int digitoCpfFunc)
-	{
-		boolean validar2;
-		if(digitoCpfFunc > 99)
-		{
-			validar2 = false;
-		}
-		else
-		{
-			validar2 = true;
-		}
-		
-			return validar2;
-	}
-	
-	
-	//telefone
-	/*private boolean validarFunc3(double telefoneFunc)
-	{
-		boolean validar2;
-		if(telefoneFunc > 99999999)
-		{
-			validar2 = false;
-		}
-		else
-		{
-			validar2 = true;
-		}
-		
-			return validar2;
-	}*/
-	
-	
-	
 
 	public int getDigitoCpf() {
 		return digitoCpf;
@@ -228,3 +166,5 @@ public class Funcionarios {
 	}
 
 }
+	
+
