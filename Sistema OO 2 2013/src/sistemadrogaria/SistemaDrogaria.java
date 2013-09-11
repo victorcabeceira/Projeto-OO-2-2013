@@ -1,6 +1,6 @@
 package sistemadrogaria;
 
-import sistemadrogaria.entidades.Funcionarios;
+import sistemadrogaria.entidades.Funcionario;
 
 public class SistemaDrogaria {
 
@@ -15,8 +15,8 @@ public class SistemaDrogaria {
 		// TODO Auto-generated method stub
 
 		//Instanciando um objeto da classe dos funcionarios
-		Funcionarios funcionarioDrogaria = new Funcionarios(2,4444,3232,15,5,"Victor","Fellipe");
-		funcionarioDrogaria.cadastrarFuncionarios("84848484","123456789",50,4444,5555,2,3,"Victor", "Fellipe", "Shces qd 1000 bloco x", "(61) - 82252227");
+		Funcionario funcionarioDrogaria = new Funcionario(2,4444,3232,15,5,"Victor","Fellipe");
+		funcionarioDrogaria.cadastrarFuncionario("84848484","123456789",50,4444,5555,2,3,"Victor", "Fellipe", "Shces qd 1000 bloco x", "(61) - 82252227");
 		
 		//Declarando atributos
 		String rgFuncDrogaria; String cpfFuncDrogaria; String nomeFuncDrogaria; String sobrenomeFuncDrogaria; String enderecoFuncDrogaria; String telefoneFuncDrogaria;

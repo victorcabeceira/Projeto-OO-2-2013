@@ -1,6 +1,6 @@
 package sistemadrogaria.entidades;
 
-public class Funcionarios {
+public class Funcionario {
 
 	//Declaracao de atributos
 	private String rg;
@@ -16,9 +16,8 @@ public class Funcionarios {
 	private String telefone;
 	
 	
-	public Funcionarios(int digitoCpfFunc, int senhaFunc, int senhaFarmPopFunc, int codFunc,int fatorComFunc, String nomeFunc, String sobrenomeFunc)
+	public Funcionario(int digitoCpfFunc, int senhaFunc, int senhaFarmPopFunc, int codFunc,int fatorComFunc, String nomeFunc, String sobrenomeFunc)
 	{
-		//
 		this.digitoCpf = digitoCpfFunc;
 		this.senha = senhaFunc;
 		this.senhaFarmaciaPopular = senhaFarmPopFunc;
@@ -28,10 +27,8 @@ public class Funcionarios {
 		this.sobrenome = sobrenomeFunc;
 	}
 	
-	public void cadastrarFuncionarios(String rgFunc, String cpfFunc,int digitoCpfFunc, int senhaFunc, int senhaFarmPopFunc, int codFunc, int fatorComFunc, String nomeFunc, String sobrenomeFunc, String enderecoFunc, String telefoneFunc) 
+	public void cadastrarFuncionario(String rgFunc, String cpfFunc,int digitoCpfFunc, int senhaFunc, int senhaFarmPopFunc, int codFunc, int fatorComFunc, String nomeFunc, String sobrenomeFunc, String enderecoFunc, String telefoneFunc) 
 	{
-		// TODO Auto-generated constructor stub
-		
 		this.rg = rgFunc;
 		this.cpf = cpfFunc;
 		this.digitoCpf = digitoCpfFunc;
@@ -55,7 +52,7 @@ public class Funcionarios {
 					System.out.println("Funcionário não cadastrado!");
 				}
 	}
-		
+		//Função para validacão do dígito de Cpf
 		private boolean validarFunc(int digitoCpfFunc)
 		{
 			boolean validar1;
