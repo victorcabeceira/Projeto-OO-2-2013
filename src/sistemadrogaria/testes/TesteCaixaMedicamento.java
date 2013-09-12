@@ -1,4 +1,4 @@
-package sistemaDrogaria.testes;
+package sistemadrogaria.testes;
 
 import static org.junit.Assert.*;
 
@@ -6,10 +6,10 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import sistemaDrogaria.caixa.Caixa;
-import sistemaDrogaria.medicamentos.Medicamento;
+import sistemadrogaria.entidades.Caixa;
+import sistemadrogaria.entidades.Medicamento;
 
-public class Teste {
+public class TesteCaixaMedicamento {
 
 	@Before
 	public void setUp() throws Exception {
@@ -25,7 +25,7 @@ public class Teste {
 	public void testGetNome() {
 		Medicamento medicamento = new Medicamento ("NomeTeste", "LaboratorioTeste", "Adulto", "Comprimido", "10/10/2020");
 		assertEquals(medicamento.getNome(),"NomeTeste");
-		//fail("Not yet implemented");
+		//fail("Not yet implemented");.
 	}
 
 	@Test

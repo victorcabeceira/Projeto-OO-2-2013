@@ -1,4 +1,4 @@
-package sistemaDrogaria.caixa;
+package sistemadrogaria.entidades;
 
 public class Caixa {
 	private float saldoAtual = 0;
@@ -35,7 +35,7 @@ public class Caixa {
 		System.out.println("Valor após o depósito: " + saldoAtual);
 	}
 
-	// Especificando métodos get and set
+	// Especificando métodos get and set.
 	public int getTipo() {
 		return tipo;
 	}

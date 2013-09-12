@@ -9,8 +9,10 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import sistemadrogaria.entidades.Cliente;
 
-public class ClienteTeste {
+
+public class TesteCliente {
 
 	@Before
 	public void setUp() throws Exception {
@@ -22,10 +24,11 @@ public class ClienteTeste {
 		System.out.println("Finalizando o teste!");
 	}
 	
+	//Teste de idade.
 	@Test
-	public void testSetCpf() {
-		Cliente novoCliente = new Cliente("Teste 1","Teste 2", 123);
-		assertEquals(novoCliente.getCpf(),123);
+	public void testSetIdade() {
+		Cliente novoCliente = new Cliente("Teste 1","Teste 2", 50);
+		assertEquals(novoCliente.getIdade(),50);
 		
 	}
 

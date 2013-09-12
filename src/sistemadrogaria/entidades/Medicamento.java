@@ -1,4 +1,4 @@
-package sistemaDrogaria.medicamentos;
+package sistemadrogaria.entidades;
 
 public class Medicamento {
 	private String nomeMedicamento;
@@ -8,7 +8,7 @@ public class Medicamento {
 	private String validadeMedicamento;
 	//private String posologia
 	
-	//Construtor sem parâmetros
+	//Construtor sem parâmetros.
 	public Medicamento (){
 		this.nomeMedicamento = "Default";
 		this.laboratorio = "Default";

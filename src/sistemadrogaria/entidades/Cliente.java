@@ -1,4 +1,4 @@
-package cliente;
+package sistemadrogaria.entidades;
 
 public class Cliente {
 	
@@ -11,11 +11,11 @@ public class Cliente {
 	private String rg;
 	private String cpf;
 
-	public Cliente (String nomeCliente, String sobrenomeCliente, String cpfCliente) {
+	public Cliente (String nomeCliente, String sobrenomeCliente, int idadeCliente) {
 		
 		this.nome = nomeCliente;
 		this.sobrenome = sobrenomeCliente;
-		this.cpf = cpfCliente;
+		this.idade = idadeCliente;
 		
 	}
 	
@@ -44,7 +44,7 @@ public class Cliente {
 	
 	private boolean validarCliente (int cadastroIdade){
 		boolean validacao;
-		if(cadastroIdade < 18 || cadastroIdade > 99) //Idade mínima para cadastrar = 18 anos
+		if(cadastroIdade < 18 || cadastroIdade > 99) //Idade mínima para cadastrar = 18 anos.
 		{
 			validacao = false;
 		}
