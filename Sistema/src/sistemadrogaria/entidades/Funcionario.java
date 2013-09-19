@@ -14,7 +14,10 @@ public class Funcionario {
 	private String sobrenome;
 	private String endereco;
 	private String telefone;
+	Medicamento[] medicamentos = {}; //Vários medicamentos para 1 funcionário
+	public static int contador = 0; //Dependencia
 	
+ 
 	
 	public Funcionario(int digitoCpfFunc, int senhaFunc, int senhaFarmPopFunc, int codFunc,int fatorComFunc, String nomeFunc, String sobrenomeFunc)
 	{
@@ -40,7 +43,9 @@ public class Funcionario {
 		this.sobrenome = sobrenomeFunc;
 		this.endereco = enderecoFunc;
 		this.telefone = telefoneFunc;
-
+		
+		contador++;
+				 //Dependencia, quando criado o funcionario, este pode ser o funcionario do caixa
 		//Validacao do Digito de cpf, que é feito a partir dos 2 dígitos finais (não foi implementado)
 		boolean validacaoDigitoCpf = this.validarFunc(digitoCpfFunc);
 				if(validacaoDigitoCpf == true)
@@ -51,7 +56,11 @@ public class Funcionario {
 				{
 					System.out.println("Funcionário não cadastrado!");
 				}
+				
+				
+				
 	}
+	
 		//Função para validacão do dígito de Cpf
 		private boolean validarFunc(int digitoCpfFunc)
 		{
@@ -68,6 +77,39 @@ public class Funcionario {
 				return validar1;
 		}
 		
+		//Aperfeiçoando o método setMedicamentos(Medicamento[] medicamentos)
+		//O medicamento deve ser vendido por no mínimo 1 funcionário cadastrado no sistema, caso contrário houve alguma irregularidade.
+		public void setMedicamentos(Medicamento[] medicamentos) {
+			if(medicamentos.length < 1){
+				System.out.println("O medicamento não pode ser vendido sem a identificação de 1 funcionário cadastrado no Sistema! O medicamento só poderá ser comercializado por no mínimo 1 funcionário devidamente cadastrado para evitar alguma irregularidade!");
+			}
+			else {
+				this.medicamentos = medicamentos;
+			}
+		}
+		
+		public void verificarMedicamento(Medicamento medicamento){
+			int tamanhoAntigo = this.medicamentos.length;
+			
+			Medicamento[] novosMedicamentos = new Medicamento[tamanhoAntigo + 1];
+			for(int i=0; i < tamanhoAntigo; i++){
+				novosMedicamentos[i] = this.medicamentos[i];
+				
+			}
+			
+			novosMedicamentos[novosMedicamentos.length-1] = medicamento;
+			this.setMedicamentos(novosMedicamentos);
+			
+		}
+		
+		//Listar número de medicamentos associados aos funcionários
+		public void listarMedicamentosAssociados(){
+			System.out.println("O número de medicamentos vendidos por funcionário é: ;");
+			for(int i=0; (i < medicamentos.length); i++){
+				System.out.println(medicamentos[i].nome);
+			}
+		}
+			
 
 	public int getDigitoCpf() {
 		return digitoCpf;
@@ -157,11 +199,24 @@ public class Funcionario {
 		this.telefone = telefone;
 	}
 
+		
+	
+	public Medicamento[] getMedicamentos() {
+		return medicamentos;
+	}
+
+	public void setMedicamentos(Medicamento[] medicamentos) {
+		this.medicamentos = medicamentos;
+	}
+
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
 	}
 
 }
-	
+
+
+
+
 

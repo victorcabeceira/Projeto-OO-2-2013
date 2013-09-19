@@ -18,6 +18,26 @@ public class SistemaDrogaria {
 		Funcionario funcionarioDrogaria = new Funcionario(2,4444,3232,15,5,"Victor","Fellipe");
 		funcionarioDrogaria.cadastrarFuncionario("84848484","123456789",50,4444,5555,2,3,"Victor", "Fellipe", "Shces qd 1000 bloco x", "(61) - 82252227");
 		
+		//TESTES DA ASSOCIAÇÃO MEDICAMENTO - FUNCIONÁRIO
+		Funcionario funcionarioDrogaria1 = new Funcionario(2,4444,3232,15,5,"Victor","Fellipe");
+		funcionarioDrogaria1.cadastrarFuncionario("84848484","123456789",50,4444,5555,2,3,"Victor", "Fellipe", "Shces qd 1000 bloco x", "(61) - 82252227");
+		
+		Medicamento medicamento1 = new Medicamento();
+		medicamento1.cadastrarMedicamento("NomeTeste", "LaboratorioTeste", "Adulto", "Comprimido", "10/10/2020");
+		
+		Medicamento medicamento2 = new Medicamento();
+		medicamento2.cadastrarMedicamento("NomeTeste", "LaboratorioTeste", "Adulto", "Comprimido", "10/10/2020");
+		
+		/**Usando o método setMedicamento*/
+		
+		
+		Medicamento[] medicamentos2 = {medicamento1, medicamento2};
+		funcionarioDrogaria1.setMedicamentos(medicamentos2);
+		
+		/**Listar os medicamentos associados ao número de funcionários*/
+		
+		funcionarioDrogaria1.listarMedicamentosAssociados();
+		
 		//Instanciando um objeto da classe dos clientes
 		Cliente novoCliente = new Cliente("Henrique", "Augusto", 9999);
 	    novoCliente.cadastrarCliente("Henrique","Augusto","8137-4609", "Residencial Santos Dumont", "henriqueaps2003@hotmail.com", 21, "1234", "9999");
@@ -36,16 +56,16 @@ public class SistemaDrogaria {
 		String nomeCliente; String sobrenomeCliente; String telefoneCliente; String enderecoCliente; String emailCliente; int idadeCliente; String rgCliente; String cpfCliente;
 		
 		//Instanciando Funcionarios
-		rgFuncDrogaria = funcionarioDrogaria.getRg();
-		cpfFuncDrogaria = funcionarioDrogaria.getCpf();
-		digitoCpfFuncDrogaria = funcionarioDrogaria.getDigitoCpf();
-		senhaFuncDrogaria = funcionarioDrogaria.getSenha();
-		codigoFuncDrogaria = funcionarioDrogaria.getCodigo();
-		fatorComissaoFuncDrogaria = funcionarioDrogaria.getFatorComissao();
-		nomeFuncDrogaria = funcionarioDrogaria.getNome();
-		sobrenomeFuncDrogaria = funcionarioDrogaria.getSobrenome();
-		enderecoFuncDrogaria = funcionarioDrogaria.getEndereco();
-		telefoneFuncDrogaria = funcionarioDrogaria.getTelefone();
+		rgFuncDrogaria = funcionarioDrogaria1.getRg();
+		cpfFuncDrogaria = funcionarioDrogaria1.getCpf();
+		digitoCpfFuncDrogaria = funcionarioDrogaria1.getDigitoCpf();
+		senhaFuncDrogaria = funcionarioDrogaria1.getSenha();
+		codigoFuncDrogaria = funcionarioDrogaria1.getCodigo();
+		fatorComissaoFuncDrogaria = funcionarioDrogaria1.getFatorComissao();
+		nomeFuncDrogaria = funcionarioDrogaria1.getNome();
+		sobrenomeFuncDrogaria = funcionarioDrogaria1.getSobrenome();
+		enderecoFuncDrogaria = funcionarioDrogaria1.getEndereco();
+		telefoneFuncDrogaria = funcionarioDrogaria1.getTelefone();
 		
 		//Instanciando Clientes
 		nomeCliente = novoCliente.getNome();
@@ -85,6 +105,8 @@ public class SistemaDrogaria {
 		System.out.println("Saldo atual: " + caixa.getSaldoAtual());	
 		caixa.depositar (150);
 		System.out.println("\nSaldo atual: " + caixa.getSaldoAtual());
+		
+		
 	
 	}
 

@@ -6,6 +6,7 @@ public class Medicamento {
 	private String recomendacao; //uso adulto ou não?
 	private String tipoMedicamento; //Comprimidos ou líquidos, etc...
 	private String validadeMedicamento;
+	Funcionario funcionario;
 	//private String posologia
 	
 	//Construtor sem parâmetros.
@@ -90,4 +91,15 @@ public class Medicamento {
 	public void setValidade(String validade) {
 		this.validadeMedicamento = validade;
 	}
+	
+	public Funcionario getFuncionario() {
+		return funcionario;
+	}
+
+	public void setFuncionario(Funcionario funcionario) {
+		this.funcionario = funcionario;
+	}
+
+	
+	
 }
