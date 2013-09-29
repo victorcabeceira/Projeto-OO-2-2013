@@ -7,8 +7,10 @@ public class Caixa {
 	private int tipo; // 0-Receita ou 1-Despesa
 	private float valor;
 	private String data;
-	private String descricao; // Informaçãoo acerca da transação. Medicamentos,
-								// salário de funcionários, etc.
+	private String descricao; // InformaÃ§Ã£o acerca da transaÃ§Ã£o. Medicamentos,
+								// salÃ¡rio de funcionÃ¡rios, etc.
+	private Cliente[] clientes;
+	private Funcionario[] funcionario; //Agregação
 
 	public Caixa() {
 		this.saldoAtual = 0;
@@ -26,7 +28,7 @@ public class Caixa {
 			this.descricao = descricao;
 		}
 		else {
-			System.out.println("Caixa nao cadastrado com sucesso.");
+			System.out.println("Caixa nao cadastrado.");
 		}
 	}
 	
@@ -36,7 +38,7 @@ public class Caixa {
 	public void depositar(float valor) {
 		System.out.println("Valor do saldo atual: " + saldoAtual);
 		saldoAtual += valor;
-		System.out.println("Valor após o depósito: " + saldoAtual);
+		System.out.println("Valor apÃ³s o depÃ³sito: " + saldoAtual);
 	}
 	
 	
@@ -47,12 +49,12 @@ public class Caixa {
 	
 	if(Funcionario.contador>0)
 	{
-		System.out.println("Funcionário cadastrado!!");
+		System.out.println("FuncionÃ¡rio cadastrado!!");
 	}
 	
 	else
 	{
-		System.out.println("Funcionário não cadastrado!!");
+		System.out.println("FuncionÃ¡rio nÃ£o cadastrado!!");
 	}
 	
 	
@@ -96,4 +98,25 @@ public class Caixa {
 	public void setSaldoAtual(float saldoAtual) {
 		this.saldoAtual = saldoAtual;
 	}
+	
+	public Funcionario[] getFuncionario() {
+		return funcionario;
+	}
+	
+	public Cliente[] getCliente () {
+		return clientes;
+	}
+	
+	public void setClientes(Cliente [] clientes){
+		this.clientes = clientes;
+	}
+	
+	public void listarClientes () {
+		for (int x=0; x<(clientes.length); x+=1){
+			System.out.println(("Clientes: [" +x +"]: "+clientes[x]));
+		}
+	}
+	
+	
+	
 }

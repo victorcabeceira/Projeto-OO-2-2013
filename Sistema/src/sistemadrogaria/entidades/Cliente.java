@@ -10,6 +10,7 @@ public class Cliente {
 	private int idade;
 	private String rg;
 	private String cpf;
+	private Caixa[] caixas;
 
 	public Cliente (String nomeCliente, String sobrenomeCliente, int idadeCliente) {
 		
@@ -20,7 +21,7 @@ public class Cliente {
 	}
 	
 	
-    //MÈtodo que cadastra o cliente na Drogaria
+    //M√©todo que cadastra o cliente na Drogaria
 	public void cadastrarCliente (String cadastroNome, String cadastroSobrenome, String cadastroTelefone, String cadastroEndereco, String cadastroEmail, int cadastroIdade, String cadastroRg, String cadastroCpf) {
 		
 		this.nome = cadastroNome;
@@ -37,14 +38,14 @@ public class Cliente {
 			System.out.println("Cliente cadastrado no sistema com Sucesso!");
 		}
 		else{
-			System.out.println("Cliente n„o cadastrado no sistema! Ele(a) possui idade inferior a 18 anos");
+			System.out.println("Cliente n√£o cadastrado no sistema! Ele(a) possui idade inferior a 18 anos");
 						
 		}
 	}
 	
 	private boolean validarCliente (int cadastroIdade){
 		boolean validacao;
-		if(cadastroIdade < 18 || cadastroIdade > 99) //Idade mÌnima para cadastrar = 18 anos.
+		if(cadastroIdade < 18 || cadastroIdade > 99) //Idade m√≠nima para cadastrar = 18 anos.
 		{
 			validacao = false;
 		}
@@ -56,8 +57,11 @@ public class Cliente {
 			return validacao;
 	}
 	
-	
-	
+	public void listarCaixas() {
+		for (int x=0; x<(caixas.length); x+=1) {
+			System.out.println(("Caixa [" +x +"]:" +caixas[x]));
+		}
+	}
 	
 	
 	//Gets e Sets
@@ -138,6 +142,14 @@ public class Cliente {
 
 	public void setCpf(String cpf) {
 		this.cpf = cpf;
+	}
+	
+	public Caixa[] getCaixas() {
+		return caixas;
+	}
+	
+	public void setCaixas(Caixa[] caixas){
+		this.caixas = caixas;
 	}
 
 

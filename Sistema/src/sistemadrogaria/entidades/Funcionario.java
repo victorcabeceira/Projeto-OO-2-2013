@@ -14,10 +14,14 @@ public class Funcionario {
 	private String sobrenome;
 	private String endereco;
 	private String telefone;
-	Medicamento[] medicamentos = {}; //V·rios medicamentos para 1 funcion·rio
+	Medicamento[] medicamentos = {}; //V√°rios medicamentos para 1 funcion√°rio
 	public static int contador = 0; //Dependencia
+	public Caixa caixa; //ComposiÁ„o
 	
- 
+
+	public Funcionario () {
+		
+	}
 	
 	public Funcionario(int digitoCpfFunc, int senhaFunc, int senhaFarmPopFunc, int codFunc,int fatorComFunc, String nomeFunc, String sobrenomeFunc)
 	{
@@ -46,22 +50,22 @@ public class Funcionario {
 		
 		contador++;
 				 //Dependencia, quando criado o funcionario, este pode ser o funcionario do caixa
-		//Validacao do Digito de cpf, que È feito a partir dos 2 dÌgitos finais (n„o foi implementado)
+		//Validacao do Digito de cpf, que √© feito a partir dos 2 d√≠gitos finais (n√£o foi implementado)
 		boolean validacaoDigitoCpf = this.validarFunc(digitoCpfFunc);
 				if(validacaoDigitoCpf == true)
 				{
-					System.out.println("Funcion·rio cadastrado com sucesso!");
+					System.out.println("Funcion√°rio cadastrado com sucesso!");
 				}
 				else
 				{
-					System.out.println("Funcion·rio n„o cadastrado!");
+					System.out.println("Funcion√°rio n√£o cadastrado!");
 				}
 				
 				
 				
 	}
 	
-		//FunÁ„o para validac„o do dÌgito de Cpf
+		//Fun√ß√£o para validac√£o do d√≠gito de Cpf
 		private boolean validarFunc(int digitoCpfFunc)
 		{
 			boolean validar1;
@@ -77,11 +81,11 @@ public class Funcionario {
 				return validar1;
 		}
 		
-		//AperfeiÁoando o mÈtodo setMedicamentos(Medicamento[] medicamentos)
-		//O medicamento deve ser vendido por no mÌnimo 1 funcion·rio cadastrado no sistema, caso contr·rio houve alguma irregularidade.
+		//Aperfei√ßoando o m√©todo setMedicamentos(Medicamento[] medicamentos)
+		//O medicamento deve ser vendido por no m√≠nimo 1 funcion√°rio cadastrado no sistema, caso contr√°rio houve alguma irregularidade.
 		public void setMedicamentos(Medicamento[] medicamentos) {
 			if(medicamentos.length < 1){
-				System.out.println("O medicamento n„o pode ser vendido sem a identificaÁ„o de 1 funcion·rio cadastrado no Sistema! O medicamento sÛ poder· ser comercializado por no mÌnimo 1 funcion·rio devidamente cadastrado para evitar alguma irregularidade!");
+				System.out.println("O medicamento n√£o pode ser vendido sem a identifica√ß√£o de 1 funcion√°rio cadastrado no Sistema! O medicamento s√≥ poder√° ser comercializado por no m√≠nimo 1 funcion√°rio devidamente cadastrado para evitar alguma irregularidade!");
 			}
 			else {
 				this.medicamentos = medicamentos;
@@ -102,12 +106,18 @@ public class Funcionario {
 			
 		}
 		
-		//Listar n˙mero de medicamentos associados aos funcion·rios
+		//Listar n√∫mero de medicamentos associados aos funcion√°rios
 		public void listarMedicamentosAssociados(){
-			System.out.println("O n˙mero de medicamentos vendidos por funcion·rio È: ;");
+			System.out.println("O n√∫mero de medicamentos vendidos por funcion√°rio √©: ;");
 			for(int i=0; (i < medicamentos.length); i++){
 				System.out.println(medicamentos[i].nome);
 			}
+		}
+		
+		public void criarCaixa () {
+			
+			Caixa caixa = new Caixa(this);
+			this.caixa = caixa;
 		}
 			
 
@@ -199,6 +209,14 @@ public class Funcionario {
 		this.telefone = telefone;
 	}
 
+	public Caixa[] getCaixa() {
+		return caixa;
+	}
+	
+	public void setCaixas(Caixa[] caixas){
+		this.caixa = caixa;
+	}
+
 		
 	
 	public Medicamento[] getMedicamentos() {
@@ -215,7 +233,6 @@ public class Funcionario {
 	}
 
 }
-
 
 
 
