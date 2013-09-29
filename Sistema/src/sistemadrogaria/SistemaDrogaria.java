@@ -18,7 +18,7 @@ public class SistemaDrogaria {
 		Funcionario funcionarioDrogaria = new Funcionario(2,4444,3232,15,5,"Victor","Fellipe");
 		funcionarioDrogaria.cadastrarFuncionario("84848484","123456789",50,4444,5555,2,3,"Victor", "Fellipe", "Shces qd 1000 bloco x", "(61) - 82252227");
 		
-		//TESTES DA ASSOCIA«√O MEDICAMENTO - FUNCION¡RIO
+		//TESTES DA ASSOCIA√á√ÉO MEDICAMENTO - FUNCION√ÅRIO
 		Funcionario funcionarioDrogaria1 = new Funcionario(2,4444,3232,15,5,"Victor","Fellipe");
 		funcionarioDrogaria1.cadastrarFuncionario("84848484","123456789",50,4444,5555,2,3,"Victor", "Fellipe", "Shces qd 1000 bloco x", "(61) - 82252227");
 		
@@ -28,13 +28,13 @@ public class SistemaDrogaria {
 		Medicamento medicamento2 = new Medicamento();
 		medicamento2.cadastrarMedicamento("NomeTeste", "LaboratorioTeste", "Adulto", "Comprimido", "10/10/2020");
 		
-		/**Usando o mÈtodo setMedicamento*/
+		/**Usando o m√©todo setMedicamento*/
 		
 		
 		Medicamento[] medicamentos2 = {medicamento1, medicamento2};
 		funcionarioDrogaria1.setMedicamentos(medicamentos2);
 		
-		/**Listar os medicamentos associados ao n˙mero de funcion·rios*/
+		/**Listar os medicamentos associados ao n√∫mero de funcion√°rios*/
 		
 		funcionarioDrogaria1.listarMedicamentosAssociados();
 		
@@ -76,38 +76,42 @@ public class SistemaDrogaria {
 		idadeCliente = novoCliente.getIdade();
 		rgCliente = novoCliente.getRg();
 		cpfCliente = novoCliente.getCpf();
+		
+		Caixa[] caixaAdd={};
+		
+		Funcionario funcionario = new Funcionario();
+		
+		funcionario.criarCaixa();
 	
-		//Imprimindo no console as informaÁıes do Funcion·rio
-		System.out.println("O RG do funcion·rio È: " + rgFuncDrogaria);
-		System.out.println("O CPF do funcionario È: " + cpfFuncDrogaria + "-" + digitoCpfFuncDrogaria);
-		System.out.println("A senha do funcionario È: " + senhaFuncDrogaria + ". Seu codigo È: " + codigoFuncDrogaria + ". E seu fator de comissao È de: " + fatorComissaoFuncDrogaria + " %");
+		//Imprimindo no console as informa√ß√µes do Funcion√°rio
+		System.out.println("O RG do funcion√°rio √©: " + rgFuncDrogaria);
+		System.out.println("O CPF do funcionario √©: " + cpfFuncDrogaria + "-" + digitoCpfFuncDrogaria);
+		System.out.println("A senha do funcionario √©: " + senhaFuncDrogaria + ". Seu codigo √©: " + codigoFuncDrogaria + ". E seu fator de comissao √© de: " + fatorComissaoFuncDrogaria + " %");
 		System.out.println("Nome do funcionario: " + nomeFuncDrogaria + sobrenomeFuncDrogaria + ".Endereco: " + enderecoFuncDrogaria + ".Telefone: " + telefoneFuncDrogaria);
 	
-		//Imprimindo no console as informaÁıes do Cliente
+		//Imprimindo no console as informa√ß√µes do Cliente
 		System.out.println("Nome e sobrenome do Cliente cadastrado: " + nomeCliente + sobrenomeCliente + ".Endereco: " + enderecoCliente + ".Telefone: " + telefoneCliente);
-		System.out.println("O RG do Cliente cadastrado È: " + rgCliente);
-		System.out.println("O CPF do Cliente cadastrado È: " + cpfCliente);
-		System.out.println("A idade do Cliente cadastrado È: " + idadeCliente);
-		System.out.println("O email do Cliente cadastrado È: " + emailCliente);
+		System.out.println("O RG do Cliente cadastrado √©: " + rgCliente);
+		System.out.println("O CPF do Cliente cadastrado √©: " + cpfCliente);
+		System.out.println("A idade do Cliente cadastrado √©: " + idadeCliente);
+		System.out.println("O email do Cliente cadastrado √©: " + emailCliente);
 		
-		//Imprimindo no console as informacıes de Medicamento
+		//Imprimindo no console as informac√µes de Medicamento
 		System.out.println("Nome do medicamento: " + medicamento.getNome());
 		System.out.println("Laboratorio fabricante: " + medicamento.getLaboratorio());
-		System.out.println("RecomendaÁ„o: " + medicamento.getRecomendacao());
+		System.out.println("Recomenda√ß√£o: " + medicamento.getRecomendacao());
 		System.out.println("Tipo: " + medicamento.getTipo());
 		System.out.println("Validade: " + medicamento.getValidade());
 
-		//Imprimindo no console as informaÁıes do Caixa
-		System.out.println("\nTipo da transaÁ„o:" + caixa.getTipo());
-		System.out.printf("Valor da transaÁ„o: R$ %.2f\n", caixa.getValor());
-		System.out.println("Data da transaÁ„o: " + caixa.getData());
-		System.out.println("DescriÁ„o: " + caixa.getDescricao());
+		//Imprimindo no console as informa√ß√µes do Caixa
+		System.out.println("\nTipo da transa√ß√£o:" + caixa.getTipo());
+		System.out.printf("Valor da transa√ß√£o: R$ %.2f\n", caixa.getValor());
+		System.out.println("Data da transa√ß√£o: " + caixa.getData());
+		System.out.println("Descri√ß√£o: " + caixa.getDescricao());
 		System.out.println("Saldo atual: " + caixa.getSaldoAtual());	
 		caixa.depositar (150);
 		System.out.println("\nSaldo atual: " + caixa.getSaldoAtual());
 		
-		
-	
 	}
 
 }
